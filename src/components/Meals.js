@@ -6,12 +6,12 @@ const Meals = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+      .get("https://www.themealdb.com/api/json/v1/1/search.php?s=tomato")
       .then((res) => setData(res.data.meals));
   }, []);
 
   return (
-    <div>
+    <div className="meals">
       {data.map((meal) => (
         <Card meal={meal} key={meal.idMeal} />
       ))}
